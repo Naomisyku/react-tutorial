@@ -1,23 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import Greetings from './components/Greetings';
+import Burgers from './components/Burgers';
+import FaqeProv from './FaqeProv'
+
+const burger = {
+  'cmimi':12,
+  'type': 'cheeseburger'
+}
+
+const burger2={
+  "cmimi":33,
+  "type":'delux' 
+}
+
+const burgerat = [{
+  'cmimi':1224,
+  'type': 'cheeseburger delux'
+},{
+  "cmimi":3322,
+  "type":'delux doppio' 
+},
+]
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>hello world</h1>
+      <Greetings price={burger.cmimi} type={burger.type}/>
+      <Greetings price={burger2.cmimi} type={burger2.type}/>
+
+      <Burgers burgersArray={burgerat}/>
+
+      <FaqeProv burgersArray={burgerat}/>
     </div>
   );
 }
